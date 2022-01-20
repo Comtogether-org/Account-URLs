@@ -8,16 +8,18 @@ sheet_id = gs4_get(URL)
 sheet_data = read_sheet(ss = sheet_id, sheet = "Google_shopping_feed")
 
 sheet_data = sheet_data %>% 
-    rename(best = newattemps)
+    rename(hellooo = newattempsman)
 
 test = read_csv("test_scott.csv")
 
-msg <- "new 2 test file"
+msg <- str_c("updated_URL on the ", Sys.time())
 write_csv(sheet_data, "test_scott.csv")
 repo = repository()
 add(repo, "*")
 commit(repo, msg, session = TRUE)
-Sys.setenv(GITHUB_PAT = "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")
+
+# this token variable is only available for 7 days, need to update it with a new one
+Sys.setenv(GITHUB_PAT = "github_token")
 
 cred <- cred_token()
 push(repo, credentials = cred)
