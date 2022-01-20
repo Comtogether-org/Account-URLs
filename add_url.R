@@ -8,7 +8,7 @@ sheet_id = gs4_get(URL)
 sheet_data = read_sheet(ss = sheet_id, sheet = "Google_shopping_feed")
 
 sheet_data = sheet_data %>% 
-    rename(hellooo = newattempsman)
+    rename(bestman = hellooo)
 
 test = read_csv("test_scott.csv")
 
@@ -19,7 +19,7 @@ add(repo, "*")
 commit(repo, msg, session = TRUE)
 
 # this token variable is only available for 7 days, need to update it with a new one
-Sys.setenv(GITHUB_PAT = "github_token")
+Sys.setenv(GITHUB_PAT = "find a way to add a token securily, maybe a google sheet")
 
 cred <- cred_token()
 push(repo, credentials = cred)
